@@ -1,0 +1,22 @@
+{
+  "name": "@khanhnguyen234/react-components",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanhnguyen234/khanhnguyen234-react-components.git"
+  },
+  "author": "khanhnguyen234",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khanhnguyen234/khanhnguyen234-react-components/issues"
+  },
+  "homepage": "https://github.com/khanhnguyen234/khanhnguyen234-react-components#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.10.1"
+  }
+}
