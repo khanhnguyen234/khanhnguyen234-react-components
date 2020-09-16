@@ -1,0 +1,39 @@
+@import './color-palettes.scss';
+
+$primary-theme: () !default;
+$primary-theme: map-merge(
+  (
+    'background': $color-red-500,
+    'color': $color-white,
+    'border-color': $color-red-border-coloured,
+    'color-inverted': $color-black,
+  ),
+  $primary-theme
+);
+
+$secondary-theme: () !default;
+$secondary-theme: map-merge(
+  (
+    'background': $color-yellow-400,
+    'color': $color-white,
+    'border-color': $color-yellow-border-coloured,
+    'color-inverted': $color-black,
+  ),
+  $secondary-theme
+);
+
+$themes: () !default;
+$themes: map-merge(
+  (
+    'primary': $primary-theme,
+    'secondary': $secondary-theme,
+  ),
+  $themes
+);
+
+@function getColor($theme, $name) {
+  @return map-get(map-get($themes, $theme), $name);
+}
+@function getColorFromTheme($theme, $name) {
+  @return map-get($theme, $name);
+}

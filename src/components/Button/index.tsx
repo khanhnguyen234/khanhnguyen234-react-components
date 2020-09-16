@@ -4,16 +4,21 @@ import { CommonProps } from '../BaseComponent'
 import cn from '../../utils/classnames'
 import * as styles from './styles.scss';
 
-interface ButtonProps extends CommonProps {
-  onClick?: () => void;
+// CommonProps React.HTMLAttributes<HTMLElement> conflict with material-ui
+// interface ButtonProps extends CommonProps {}
+interface ButtonProps {
   disabled?: boolean;
+  className?: string
+  children?: any
+  onClick: () => void
 }
 
 export const ButtonExt = React.forwardRef((props: ButtonProps, ref) => {
   const {    
     className,
     children,
-    disabled
+    disabled,
+    ...rest
   } = props
   
   const classOfComponent = cn(
@@ -26,7 +31,7 @@ export const ButtonExt = React.forwardRef((props: ButtonProps, ref) => {
       variant="contained"
       color="primary"
       className={classOfComponent}
-      {...props}
+      {...rest}
     >
       {children}
     </Button>
