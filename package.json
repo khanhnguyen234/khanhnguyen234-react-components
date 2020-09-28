@@ -1,6 +1,6 @@
 {
   "name": "@khanhnguyen234/react-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -42,8 +42,8 @@
     "csstype": "^2.6.10",
     "dotenv": "^8.2.0",
     "dotenv-cli": "^4.0.0",
-    "lodash-es": "4.17.15",
     "html-webpack-plugin": "^4.3.0",
+    "lodash-es": "4.17.15",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
