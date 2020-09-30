@@ -5,34 +5,40 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "deploy": "yarn build && dotenv cross-var aws s3 sync dist s3://%S3_BUCKET_NAME%/%S3_BUCKET_KEY%/ --acl=public-read"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/khanhnguyen234/khanhnguyen234-react-components.git"
+    "deploy": "yarn build && cp .env dist/.env && dotenv cross-var aws s3 sync dist s3://%S3_BUCKET_NAME%/%S3_BUCKET_KEY%/ --acl=public-read"
   },
   "author": "khanhnguyen234",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/khanhnguyen234/khanhnguyen234-react-components/issues"
-  },
-  "homepage": "https://github.com/khanhnguyen234/khanhnguyen234-react-components#readme",
   "dependencies": {
+    "@khanhnguyen234/react-common": "0.0.6",
+    "@khanhnguyen234/react-components": "0.0.2",
+    "classnames": "^2.2.6",
+    "date-fns": "^2.16.1",
+    "path-to-regexp": "3.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-player": "^2.6.2",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "redux-thunk": "^2.3.0",
+    "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
+    "@babel/preset-typescript": "^7.10.4",
     "@types/classnames": "^2.2.10",
     "@types/history": "^4.7.6",
+    "@types/node": "7.0.7",
     "@types/node-sass": "^4.11.1",
     "@types/path-to-regexp": "1.7.0",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",
-    "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.1.0",
-    "classnames": "2.2.6",
+    "bundle-loader": "^0.5.6",
     "clean-webpack-plugin": "^3.0.0",
     "cross-var": "^1.1.0",
     "css-loader": "^3.5.3",
@@ -40,13 +46,15 @@
     "dotenv": "^8.2.0",
     "dotenv-cli": "^4.0.0",
     "html-webpack-plugin": "^4.3.0",
+    "http-server": "^0.12.3",
+    "lodash-es": "^4.17.15",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
     "typescript": "^3.9.3",
-    "@material-ui/core": "^4.11.0",
-    "lodash-es": "^4.17.15",
     "webpack": "5.0.0-beta.23",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "workbox-webpack-plugin": "^5.1.3"
   }
 }
