@@ -1,5 +1,4 @@
 import * as React from "react";
-import Button from "@material-ui/core/Button";
 import { CommonProps } from "../BaseComponent";
 import cn from "../../utils/classnames";
 import * as styles from "./styles.scss";
