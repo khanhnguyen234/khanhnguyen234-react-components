@@ -1,21 +1,20 @@
 import * as React from 'react';
-import csstype from 'csstype'
-import cx from '../../utils/classnames'
-import { CommonProps } from '../BaseComponent'
-import { GridBreakpoint, GridSize } from './types'
+import csstype from 'csstype';
+import cx from '../../utils/classnames';
+import { CommonProps } from '../BaseComponent';
+import { GridBreakpoint, GridSize } from './types';
 import * as styles from './styles.scss';
 
-export * from './types'
+export * from './types';
 
-interface GridProps extends GridBreakpoint {}
-interface GridProps extends CommonProps {
-  container?: boolean
-  item?: boolean
-  spacing?: number
-  nowrap?: boolean
-  direction?: csstype.FlexDirectionProperty
-  justifyContent?: csstype.JustifyContentProperty
-  alignItem?: csstype.AlignItemsProperty
+interface GridProps extends GridBreakpoint, CommonProps {
+  container?: boolean;
+  item?: boolean;
+  spacing?: number;
+  nowrap?: boolean;
+  direction?: csstype.FlexDirectionProperty;
+  justifyContent?: csstype.JustifyContentProperty;
+  alignItem?: csstype.AlignItemsProperty;
 }
 
 const defaultProps: GridProps = {
@@ -23,7 +22,7 @@ const defaultProps: GridProps = {
   container: false,
   item: false,
   nowrap: false,
-}
+};
 
 export const Grid = React.forwardRef((props: GridProps, ref: any) => {
   const {
@@ -42,7 +41,7 @@ export const Grid = React.forwardRef((props: GridProps, ref: any) => {
     sm,
     spacing,
     ...rest
-  } = { ...defaultProps, ...props }
+  } = { ...defaultProps, ...props };
 
   const classOfComponent = cx(className, {
     [styles.grid]: container,
@@ -57,11 +56,11 @@ export const Grid = React.forwardRef((props: GridProps, ref: any) => {
     [styles[`md-${md as string}`]]: md !== undefined,
     [styles[`lg-${lg as string}`]]: lg !== undefined,
     [styles[`xl-${xl as string}`]]: xl !== undefined,
-  })
+  });
 
-  return <Component className={classOfComponent} {...rest} ref={ref} />
-})
+  return <Component className={classOfComponent} {...rest} ref={ref} />;
+});
 
-Grid.displayName = 'Grid'
+Grid.displayName = 'Grid';
 
-export default Grid
+export default Grid;
